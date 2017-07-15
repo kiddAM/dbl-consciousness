@@ -1,4 +1,6 @@
 import googlemaps
+from motionless import CenterMap
+
 from datetime import datetime
 
 gmaps = googlemaps.Client(key='AIzaSyCnVeLt_qHh4zguJBK5zYF85iJvRTCi0eM')
@@ -25,5 +27,5 @@ reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
 # Request directions via public transit
 #print (type(directions_result))
 #print ((directions_result[0]))
-
-print (getAddress(address1,city1, state1))
+cmap = CenterMap(address= '151 third st, san francisco, ca')
+print (cmap.generate_url())
