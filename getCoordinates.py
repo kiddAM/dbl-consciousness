@@ -29,3 +29,4 @@ reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
 #print ((directions_result[0]))
 cmap = CenterMap(address= '151 third st, san francisco, ca')
 print (cmap.generate_url())
+
