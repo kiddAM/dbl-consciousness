@@ -27,4 +27,3 @@ class PoliceBrutalityMapping(Base):
     cause = Column('cause_of_death', TEXT)
     brief = Column('brief_account', TEXT)
     link = Column('link', TEXT)
-    
