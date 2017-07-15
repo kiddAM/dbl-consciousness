@@ -6,3 +6,12 @@ Jinja2==2.9.6
 MarkupSafe==1.0
 SQLAlchemy==1.1.11
 Werkzeug==0.12.2
+click==6.7
+Flask==0.12.2
+flask-marshmallow==0.8.0
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+marshmallow==2.13.5
+six==1.10.0
+Werkzeug==0.12.2
