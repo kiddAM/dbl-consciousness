@@ -26,4 +26,4 @@ reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
 #print (type(directions_result))
 #print ((directions_result[0]))
 
-print (getAddress(address1,city1, state1))
+print (getGeoLocation(address1,city1, state1))
