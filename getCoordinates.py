@@ -27,6 +27,6 @@ reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
 # Request directions via public transit
 #print (type(directions_result))
 #print ((directions_result[0]))
-cmap = CenterMap(address= '151 third st, san francisco, ca')
+cmap = CenterMap(address='9600 14th Bay Street, Norfolk, VA')
 print (cmap.generate_url())
 
