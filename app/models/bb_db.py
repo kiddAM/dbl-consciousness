@@ -5,13 +5,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class BlackBusinessMapping(Base):
+class BlackBusiness(Base):
     "Docstring for BlackBusinessMapping"
     __tablename__ = "Black_Businesses"
 
-
-
-    _id = Column('id', Integer, primary_key=True)
+    id = Column('id', Integer, primary_key=True)
     name = Column('name', String, nullable=False)
     owner = Column('owner_name', String, nullable=False)
     service = Column('service', String, nullable=True)
