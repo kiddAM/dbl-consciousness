@@ -18,8 +18,6 @@ class BlackBusiness(Base):
     founding = Column('founding', String)
     address = Column('address', String, nullable=False)
 
-    def getid(self):
-        return self._id
 
     def __repr__(self):
         return "<User(name='%s', fullname='%s', password='%s'>" % (self.name, self.fullname, self.password)

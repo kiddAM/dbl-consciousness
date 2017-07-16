@@ -1,6 +1,8 @@
-import marshmallow import Schema
+import marshmallow as ma
+from app.models.bb_db import BlackBusiness
 
-class BlackBusinessSchema(Schema):
+class BlackBusinessSchema(ma.ModelSchema):
     class Meta:
         # Fields to expose
-        fields = ('')
+        model = BlackBusiness
+    
