@@ -12,6 +12,7 @@ class PoliceBrutalityMapping(Base):
     name = Column('name', TEXT, nullable=False)
     age = Column('age', Integer)
     gen = Column('gender', TEXT)
+    ethn = Column('race/ethnicity', TEXT)
     dod = Column('date_of_death', Date, primary_key=True)
     street = Column('street', TEXT)
     city = Column('city', TEXT, nullable=False)
