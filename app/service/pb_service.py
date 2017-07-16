@@ -9,6 +9,9 @@ from app.models import pb_db
 def create_encounter(db_session, name, age, gen, dod, street, city, state,
     zipcd, county, dept, cause, brief, link):
     """ adds new encounter to database"""
+    gen = pb_db.PoliceBrutalityMapping.GenderIDs(gen)
+    cause = pb_db.PoliceBrutalityMapping.CausesOfDeath(cause)
+
     exists = db_session.query(pb_db.PoliceBrutalityMapping).filter(
         and_(pb_db.PoliceBrutalityMapping.name == name),
         (pb_db.PoliceBrutalityMapping.city == city),
