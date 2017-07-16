@@ -3,8 +3,8 @@ import json
 from sqlalchemy import and_
 from sqlalchemy import desc
 
-import service_util
-from .models import pb_db
+import app.service.service_util
+from app.models import pb_db
 
 def create_encounter(db_session, name, age, gen, dod, street, city, state,
     zipcd, county, dept, cause, brief, link):
@@ -17,7 +17,7 @@ def create_encounter(db_session, name, age, gen, dod, street, city, state,
     if exists:
         raise ValueError('Encounter already logged.')
     else:
-        encounter = pd_db.PoliceBrutalityMapping(
+        encounter = pb_db.PoliceBrutalityMapping(
             name = name,
             age = age,
             gen = gen,
