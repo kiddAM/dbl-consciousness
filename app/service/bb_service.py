@@ -31,9 +31,21 @@ def create_encounter(db_session,name,owner,service,city, state, address,founding
         return business
     return None
 
+def create_business_from_obj(db_session, business):
+    exists = db_session.query(BlackBusiness).filter(
+        and_(BlackBusiness.name == business.get_business_by_name()),
+        (BlackBusiness.owner == business.get_business_by_owner()),
+        (BlackBusiness.address == business.get_business_by_address().one_or_more())
+    )
+    if exists:
+        raise ValueError("Bad Value")
+    else:
+        db_session.add(business)
+        db_session.flush()
+        return business
+    return None
 
-
-def get_all_encounters(db_session):
+def get_all_businesses(db_session):
     return db_session.query(BlackBusiness).order_by(desc(BlackBusiness.name)).all()
 
 def get_business_by_city(db_session, city):

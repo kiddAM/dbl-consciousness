@@ -40,6 +40,20 @@ def create_encounter(db_session, name, age, gen, dod, street, city, state,
         return encounter
     return None
 
+def create_encounter_from_obj(db_session, encounter):
+    exists = db_session.query(pb_db.PoliceBrutalityMapping).filter(
+        and_(pb_db.PoliceBrutalityMapping.name == encounter.get_encounter_by_name()),
+        (pb_db.PoliceBrutalityMapping.city == encounter.get_encounter_by_city()),
+        (pb_db.PoliceBrutalityMapping.state == encounter.get_encounter_by_state()).one_or_none())
+
+    if exists:
+        raise ValueError("Encounter Already Logged")
+    else:
+        db_session.add(encounter)
+        db_session.flush()
+        return encounter
+    return None
+
 def get_encounter_by_cause(db_session, cause):
     """ gets encounter by cause of death """
     return db_session.query(pb_db.PoliceBrutalityMapping).filter(
