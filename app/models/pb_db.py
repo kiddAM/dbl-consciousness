@@ -1,10 +1,5 @@
-from sqlalchemy import orm
-from sqlalchemy.ext import (
-    hybrid as sa_hybrid,
-    declarative_base
-    )
-from sqlalchemy.dialects import postgresql as sa_postgres
-from sqlalchemy.types import _LookupExpressionAdapter
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, TEXT, Date
 
 Base = declarative_base()
 

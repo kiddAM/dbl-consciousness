@@ -5,4 +5,3 @@ class BlackBusinessSchema(ma.ModelSchema):
     class Meta:
         # Fields to expose
         model = BlackBusiness
-    
