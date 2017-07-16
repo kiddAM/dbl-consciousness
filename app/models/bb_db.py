@@ -9,14 +9,17 @@ class BlackBusiness(Base):
     "Docstring for BlackBusinessMapping"
     __tablename__ = "Black_Businesses"
 
-    id = Column('id', Integer, primary_key=True)
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
     name = Column('name', String, nullable=False)
-    owner = Column('owner_name', String, nullable=False)
-    service = Column('service', String, nullable=True)
+    owner = Column('owner_name', String)
+    service = Column('service', String, nullable=False)
     x = Column('lat', Float)
     y = Column('long', Float)
     founding = Column('founding', String)
     address = Column('address', String, nullable=False)
+    city = Column('city', String)
+    state = Column('state', String)
+
 
 
     def __repr__(self):
