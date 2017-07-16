@@ -20,7 +20,7 @@ def create_encounter(db_session, name, age, gen, dod, street, city, state,
     if exists:
         raise ValueError('Encounter already logged.')
     else:
-        encounter = pd_db.PoliceBrutalityMapping(
+        encounter = pb_db.PoliceBrutalityMapping(
             name = name,
             age = age,
             gen = gen,
